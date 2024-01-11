@@ -148,8 +148,9 @@ export default {
     .poster {
         height: 260px;
 
-        img {
 
+        img {
+            border-radius: 5px;
             height: 100%;
         }
     }
