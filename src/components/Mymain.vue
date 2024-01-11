@@ -32,12 +32,21 @@ export default {
 
 <template>
     <main class="container">
-        <div class="row row-cols-5 ">
+
+        <div class="row row-cols-5 " v-if="store.FilmsList == 0">
+
+            <img src="/rick-astley-dance.gif" class="gif" alt="Footer non presente">
+
+        </div>
+
+        <div class="row row-cols-5 " v-else>
             <div v-for="(film, i) in store.FilmsList" :key="i" class="col p-2">
                 <FilmCard :info="film" />
             </div>
 
         </div>
+
+
 
     </main>
 </template>
@@ -49,5 +58,12 @@ export default {
 
 main {
     background-color: $Quaternary;
+
+    .gif {
+        width: 15%;
+        margin-left: 45%;
+
+        vertical-align: middle;
+    }
 }
 </style>
