@@ -1,7 +1,28 @@
 <script >
+import FilmCard from './FilmCard.vue'
+
+//importo store
+import { store } from '../store'
 
 export default {
-    name: "Mymain"
+    name: "Mymain",
+
+    components: {
+        FilmCard
+    },
+
+    data() {
+        return {
+            store,
+
+        }
+    },
+    computed: {
+        numcard() {
+            return store.CardList.length;
+        }
+    }
+
 }
 
 
@@ -11,8 +32,12 @@ export default {
 
 <template>
     <main class="container">
+        <div class="row row-cols-5 ">
+            <div v-for="(film, i) in store.FilmsList" :key="i" class="col p-2">
+                <FilmCard :info="film" />
+            </div>
 
-        <h2>No Main,work in progress.....</h2><img src="/rick-astley-dance.gif" class="gif" alt="main non presente">
+        </div>
 
     </main>
 </template>
@@ -22,15 +47,7 @@ export default {
 @use '../styles/partials/variables' as *;
 
 
-.gif {
-    width: 15%;
-    margin-left: 12%;
-
-    vertical-align: middle;
-}
-
-h2 {
-    margin-left: 17%;
-    display: inline-block;
+main {
+    background-color: $fort;
 }
 </style>

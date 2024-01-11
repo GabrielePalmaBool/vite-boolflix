@@ -38,7 +38,7 @@ export default {
                     </div>
 
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-secondary mb-2" @click.prevent="$emit('Serchfilm')">
+                        <button type="submit" class="btn btn-secondary mb-2" @click.prevent="$emit('serchfilm')">
                             Cerca
                         </button>
                     </div>

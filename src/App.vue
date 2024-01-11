@@ -34,12 +34,12 @@ export default {
 
             //Se è stato selezionato qualcosa dal selettore
             if (store.searchText !== "") {
-                myURL = `https://db.ygoprodeck.com/api/v7/cardinfo.php?${store.Arc}=${store.searchText}`
+                myURL += `&${store.query}=${store.searchText}`
             }
 
             console.log(myURL);
             //prima chiamata axios
-            axios.get(myURL).then((res => { store.CardList = res.data.data; console.log(store.CardList); })).catch((err) => { console.log("Errori", err); });
+            axios.get(myURL).then((res => { store.FilmsList = res.data.results; console.log(store.FilmsList); })).catch((err) => { console.log("Errori", err); });
 
             //Seconda chiamta axios
             //axios.get(store.apiURL2).then((res => { store.ArchList = res.data; console.log(store.ArchList); })).catch((err) => { console.log("Errori", err); });
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-    <Myheader @Serchfilm="getFilms" />
+    <Myheader @serchfilm="getFilms" />
     <Mymain />
     <Myfooter />
 </template>
