@@ -29,10 +29,29 @@ export default {
 
         <ul>
             <li>
-                <h4>Titolo: {{ info.title }}</h4>
+                <div v-if="info.title">
+
+                    <h4>Titolo: {{ info.title }}</h4>
+
+                </div>
+                <div v-else>
+
+                    <h4>Titolo: {{ info.name }}</h4>
+
+                </div>
+
             </li>
             <li>
-                <h5>Titolo Originale: {{ info.original_title }}</h5>
+                <div v-if="info.original_title">
+
+                    <h5>Titolo Originale: {{ info.original_title }}</h5>
+
+                </div>
+                <div v-else>
+
+                    <h5>Titolo Originale: {{ info.original_name }}</h5>
+
+                </div>
             </li>
             <li>
 
