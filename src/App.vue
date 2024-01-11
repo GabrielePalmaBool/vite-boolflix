@@ -39,7 +39,9 @@ export default {
 
             console.log(myURL);
             //prima chiamata axios
-            axios.get(myURL).then((res => { store.FilmsList = res.data.results; console.log(store.FilmsList); })).catch((err) => { console.log("Errori", err); });
+            axios.get(myURL).then((res => { store.FilmsList = res.data.results; console.log(store.FilmsList); })).catch((err) => {
+                console.log("Errori", err);
+            });
 
         }
     },

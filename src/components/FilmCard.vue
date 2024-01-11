@@ -14,7 +14,17 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="'https://image.tmdb.org/t/p/w342' + info.backdrop_path" alt="">
+
+        <!-- controllo che il percorso dell'immagine ci sia -->
+        <div v-if="info.backdrop_path">
+            <img :src="'https://image.tmdb.org/t/p/w342' + info.backdrop_path" alt="">
+        </div>
+
+        <!-- in caso non sia così -->
+        <div v-else>
+            <img src="/rick-astley-dance.gif" class="gif" alt="Footer non presente">
+            <p>image not found</p>
+        </div>
 
         <ul>
             <li>
