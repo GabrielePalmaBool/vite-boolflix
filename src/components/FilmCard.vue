@@ -22,6 +22,7 @@ export default {
 
         <!-- in caso non sia così -->
         <div v-else>
+
             <img src="/rick-astley-dance.gif" class="gif" alt="rick-astley-dance">
             <p>image not found</p>
         </div>
@@ -37,7 +38,16 @@ export default {
                 <h4>Lingua: {{ info.original_language }}</h4>
             </li>
             <li>
-                <h4>Voto: {{ info.vote_average }}</h4>
+                <div v-if="info.vote_average > 5">
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                </div>
+                <div v-else>
+                    <h4>Voto: {{ info.vote_average }}</h4>
+                </div>
             </li>
         </ul>
 
