@@ -12,8 +12,8 @@ export default {
 <template>
     <footer class="container">
 
-        <h2>No Footer in this app</h2><img src="/rick-astley-dance.gif" class="gif" alt="Footer non presente">
-        <h2>No Footer in this app</h2>
+        <img src="/rick-astley-dance.gif" class="gif" alt="Footer non presente">
+
     </footer>
 </template>
 
@@ -24,13 +24,8 @@ export default {
 
 .gif {
     width: 15%;
-    margin-left: 12%;
+    margin-left: 45%;
 
     vertical-align: middle;
-}
-
-h2 {
-    margin-left: 5%;
-    display: inline-block;
 }
 </style>

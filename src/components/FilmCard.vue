@@ -16,7 +16,7 @@ export default {
     <div class="card">
 
         <!-- controllo che il percorso dell'immagine ci sia -->
-        <div v-if="info.backdrop_path">
+        <div v-if="info.backdrop_path" class="poster">
             <img :src="'https://image.tmdb.org/t/p/w342' + info.backdrop_path" alt="immagine film">
         </div>
 
@@ -35,15 +35,80 @@ export default {
                 <h5>Titolo Originale: {{ info.original_title }}</h5>
             </li>
             <li>
-                <h4>Lingua: {{ info.original_language }}</h4>
-            </li>
-            <li>
-                <div v-if="info.vote_average > 5">
 
-                    <font-awesome-icon icon="fa-solid fa-star" v-for=" n in 5" />
+                <!-- Gestione bandiere nazionalità films -->
+                <div v-if="info.original_language == 'en'">
+
+                    <h4>Lingua:</h4> <img src="/flags/united-states.png" class="flag" alt="bandiera americana">
+
+                </div>
+                <div v-else-if="info.original_language == 'fr'">
+
+                    <h4>Lingua:</h4> <img src="/flags/france.png" class="flag" alt="bandiera francese">
+
+                </div>
+                <div v-else-if="info.original_language == 'it'">
+
+                    <h4>Lingua:</h4> <img src="/flags/italy.png" class="flag" alt="bandiera italiana">
+
+                </div>
+                <div v-else-if="info.original_language == 'es'">
+
+                    <h4>Lingua:</h4> <img src="/flags/spain.png" class="flag" alt="bandiera spagnola">
+
+                </div>
+                <div v-else-if="info.original_language == 'ja'">
+
+                    <h4>Lingua:</h4> <img src="/flags/japan.png" class="flag" alt="bandiera giapponese">
+
+                </div>
+                <div v-else-if="info.original_language == 'de'">
+
+                    <h4>Lingua:</h4> <img src="/flags/german.png" class="flag" alt="bandiera tedesca">
+
+                </div>
+                <div v-else-if="info.original_language == 'ko'">
+
+                    <h4>Lingua:</h4> <img src="/flags/south-korea.png" class="flag" alt="bandiera corea del sud">
+
+                </div>
+                <div v-else-if="info.original_language == 'zh' || info.original_language == 'cn'">
+
+                    <h4>Lingua:</h4> <img src="/flags/china.png" class="flag" alt="bandiera cinese">
 
                 </div>
                 <div v-else>
+
+                    <h4>Lingua: {{ info.original_language }}</h4>
+
+                </div>
+            </li>
+
+            <!-- gestione icona stella -->
+            <li>
+                <div v-if="info.vote_average == 10">
+
+                    <font-awesome-icon icon="fa-solid fa-star" class="icon" v-for=" n in 5" />
+
+                </div>
+                <div v-if="info.vote_average >= 7 && info.vote_average < 10">
+
+                    <font-awesome-icon icon="fa-solid fa-star" class="icon" v-for=" n in 4" />
+
+                </div>
+                <div v-else-if="info.vote_average >= 3.5 && info.vote_average < 7">
+
+                    <font-awesome-icon icon="fa-solid fa-star" class="icon" v-for=" n in 3" />
+
+                </div>
+                <div v-else-if="info.vote_average > 0 && info.vote_average < 3.5">
+
+                    <font-awesome-icon icon="fa-solid fa-star" class="icon" v-for=" n in 2" />
+
+                </div>
+
+                <div v-else-if="info.vote_average == 0">
+
                     <h4>Voto: {{ info.vote_average }}</h4>
                 </div>
             </li>
@@ -59,6 +124,16 @@ export default {
 
 .card {
     text-align: center;
+    height: 480px;
+
+    .poster {
+        height: 260px;
+
+        img {
+
+            height: 100%;
+        }
+    }
 
     ul {
         list-style: none;
@@ -66,11 +141,21 @@ export default {
         h4 {
             text-transform: capitalize;
             font-size: 15px;
-
+            display: inline-block;
         }
 
         h5 {
             font-size: 15px;
+        }
+
+
+        .flag {
+            width: 10%;
+
+        }
+
+        .icon {
+            color: gold;
         }
     }
 
