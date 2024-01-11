@@ -17,12 +17,12 @@ export default {
 
         <!-- controllo che il percorso dell'immagine ci sia -->
         <div v-if="info.backdrop_path">
-            <img :src="'https://image.tmdb.org/t/p/w342' + info.backdrop_path" alt="">
+            <img :src="'https://image.tmdb.org/t/p/w342' + info.backdrop_path" alt="immagine film">
         </div>
 
         <!-- in caso non sia così -->
         <div v-else>
-            <img src="/rick-astley-dance.gif" class="gif" alt="Footer non presente">
+            <img src="/rick-astley-dance.gif" class="gif" alt="rick-astley-dance">
             <p>image not found</p>
         </div>
 
