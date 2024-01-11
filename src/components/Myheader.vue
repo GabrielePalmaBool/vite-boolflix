@@ -34,7 +34,7 @@ export default {
                 <div class="row">
                     <div class="col-auto">
                         <input type="text" class="form-control" placeholder="Cerca Film....."
-                            v-model.trim="store.searchText">
+                            v-model.trim="store.searchText" @keyup.enter="$emit('serchfilm')">
                     </div>
 
                     <div class="col-auto">
