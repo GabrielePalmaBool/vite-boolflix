@@ -19,7 +19,7 @@ export default {
     },
     computed: {
         numcard() {
-            return store.CardList.length;
+            return store.FilmsList.length;
         }
     }
 

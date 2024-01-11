@@ -41,8 +41,6 @@ export default {
             //prima chiamata axios
             axios.get(myURL).then((res => { store.FilmsList = res.data.results; console.log(store.FilmsList); })).catch((err) => { console.log("Errori", err); });
 
-            //Seconda chiamta axios
-            //axios.get(store.apiURL2).then((res => { store.ArchList = res.data; console.log(store.ArchList); })).catch((err) => { console.log("Errori", err); });
         }
     },
 
