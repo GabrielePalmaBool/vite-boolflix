@@ -39,11 +39,9 @@ export default {
             </li>
             <li>
                 <div v-if="info.vote_average > 5">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                    <font-awesome-icon icon="fa-solid fa-star" />
+
+                    <font-awesome-icon icon="fa-solid fa-star" v-for=" n in 5" />
+
                 </div>
                 <div v-else>
                     <h4>Voto: {{ info.vote_average }}</h4>
