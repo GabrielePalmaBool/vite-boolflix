@@ -128,7 +128,7 @@ export default {
 
                 <div v-else-if="info.vote_average == 0">
 
-                    <h4>Voto: {{ info.vote_average }}</h4>
+                    <font-awesome-icon icon="fa-solid fa-thumbs-down" class="down" />
                 </div>
             </li>
         </ul>
@@ -174,7 +174,11 @@ export default {
         }
 
         .icon {
-            color: gold;
+            color: $Quintenary;
+        }
+
+        .down {
+            color: $secondary;
         }
     }
 

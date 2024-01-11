@@ -48,6 +48,6 @@ export default {
 
 
 main {
-    background-color: $fort;
+    background-color: $Quaternary;
 }
 </style>
