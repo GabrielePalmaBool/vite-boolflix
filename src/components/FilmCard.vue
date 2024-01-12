@@ -8,7 +8,12 @@ export default {
 
     methods: {
         trim(string) {
-            return string.substr(1, 600);
+            console.log(string)
+            if (string.length > 100) {
+                return string.substr(1, 600);
+            }
+            else return string;
+
         }
     }
 }
@@ -162,18 +167,15 @@ export default {
             </div>
 
             <!-- Gestione tramite una funzione trim del numero di parole all'interno del campo verview -->
-            <div v-if="info.overview !== undefined">
-                <div class="flip-card-back" v-if="info.overview.length == 0">
-                    <h4 style="margin-right:50px;">Genere: Not found</h4>
-                </div>
-                <div class="flip-card-back" v-else-if="info.overview.length > 100">
-                    <h4>Genere: {{ trim(info.overview) }}</h4>
-                </div>
 
-                <div class="flip-card-back" v-else>
-                    <h4>Genere: {{ info.overview }}</h4>
-                </div>
+            <div class="flip-card-back" v-if="info.overview !== undefined && info.overview !== ''">
+                <h4>Genere: {{ trim(info.overview) }}</h4>
             </div>
+
+            <div class="flip-card-back" v-else>
+                <h4 style="margin-right:50px;">Genere: Not found</h4>
+            </div>
+
 
         </div>
     </div>
