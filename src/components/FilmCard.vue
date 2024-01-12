@@ -8,8 +8,6 @@ export default {
 
     methods: {
         trim(string) {
-
-            console.log(string);
             return string.substr(1, 600);
         }
     }
