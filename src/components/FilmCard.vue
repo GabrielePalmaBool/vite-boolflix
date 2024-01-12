@@ -103,6 +103,22 @@ export default {
                 </div>
             </li>
 
+            <!-- genere-->
+            <li>
+                <div v-if="info.media_type == 'tv'">
+
+                    <h4>Genere: Serie tv</h4>
+
+                </div>
+
+                <div v-else>
+
+                    <h4>Genere: {{ info.media_type }}</h4>
+
+                </div>
+
+            </li>
+
             <!-- gestione icona stella -->
             <li>
                 <div v-if="info.vote_average == 10">
