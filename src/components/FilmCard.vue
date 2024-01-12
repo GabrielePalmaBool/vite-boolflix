@@ -171,11 +171,11 @@ export default {
             <!-- Gestione tramite una funzione trim del numero di parole all'interno del campo verview -->
 
             <div class="flip-card-back" v-if="info.overview !== undefined && info.overview !== ''">
-                <h4>Genere: {{ trim(info.overview) }}</h4>
+                <h4>Trama: {{ trim(info.overview) }}</h4>
             </div>
 
             <div class="flip-card-back" v-else>
-                <h4 style="margin-right:50px;">Genere: Not found</h4>
+                <h4 style="margin-right:50px;">Trama: Not found</h4>
             </div>
 
 
