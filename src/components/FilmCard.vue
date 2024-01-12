@@ -8,10 +8,12 @@ export default {
 
     methods: {
         trim(string) {
-            console.log(string)
+
+
             if (string.length > 100) {
                 return string.substr(1, 600);
             }
+
             else return string;
 
         }
