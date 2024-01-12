@@ -11,7 +11,7 @@ export default {
 
 
             if (string.length > 100) {
-                return string.substr(1, 600);
+                return string.substr(0, 600);
             }
 
             else return string;
