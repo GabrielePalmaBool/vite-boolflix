@@ -160,15 +160,19 @@ export default {
                 </ul>
 
             </div>
+
             <!-- Gestione tramite una funzione trim del numero di parole all'interno del campo verview -->
-            <div class="flip-card-back" v-if="info.overview.length > 100">
-                <h4>Genere: {{ trim(info.overview) }}</h4>
-            </div>
-            <div class="flip-card-back" v-else-if="info.overview.length == 0">
-                <h4 style="margin-right:50px;">Genere: Not found</h4>
-            </div>
-            <div class="flip-card-back" v-else>
-                <h4>Genere: {{ info.overview }}</h4>
+            <div v-if="info.overview !== undefined">
+                <div class="flip-card-back" v-if="info.overview.length == 0">
+                    <h4 style="margin-right:50px;">Genere: Not found</h4>
+                </div>
+                <div class="flip-card-back" v-else-if="info.overview.length > 100">
+                    <h4>Genere: {{ trim(info.overview) }}</h4>
+                </div>
+
+                <div class="flip-card-back" v-else>
+                    <h4>Genere: {{ info.overview }}</h4>
+                </div>
             </div>
 
         </div>
